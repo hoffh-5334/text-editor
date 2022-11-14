@@ -39,6 +39,10 @@ export const getDb = async () => {
   // You can duplicate the same first lines of code from above, except that the transaction will be 'readonly'
   
   // LINES 1-3 HERE
+  const DB_VAR = await openDB('DB_NAME', 1);
+  const TX_VAR = jateDb.transaction('DB_NAME', 'readonly');
+  const STORE_VAR = tx.objectStore('DB_NAME');
+  const VAR_NAME = store.put({ id: 1, value: content });
 
   // Leave the rest as-is
   const request = store.get(1);
